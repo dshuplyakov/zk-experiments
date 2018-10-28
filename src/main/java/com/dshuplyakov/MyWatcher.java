@@ -29,7 +29,6 @@ public class MyWatcher implements CuratorWatcher {
     @Override
     public void process(WatchedEvent watchedEvent) throws Exception {
         curatorFramework.checkExists().usingWatcher(this).forPath(path);
-
         byte[] value = this.curatorFramework.getData().forPath(path);
         String res = new String(value, Charset.forName("UTF-8"));
         LOGGER.info("Watcher fired, value {} {} {}", res, watchedEvent.getState(), watchedEvent.getType());

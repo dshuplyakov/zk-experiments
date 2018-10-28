@@ -23,7 +23,7 @@ public class ZookeeperInit {
     public void init() {
         //building client
         curatorFrameworkClient = CuratorFrameworkFactory.builder()
-                .connectString("127.0.0.1:2181")
+                .connectString("srv7-turzin:2181")
                 .retryPolicy(new RetryNTimes(3, 1000))
                 .sessionTimeoutMs(20000)
                 .connectionTimeoutMs(1000)
@@ -42,7 +42,11 @@ public class ZookeeperInit {
             throw new IllegalStateException("Can't connect to Zookeeper");
         }
 
-        LOGGER.info("Connected to Zookeeper");
+        try {
+            LOGGER.info("Connected to Zookeeper {}", curatorFrameworkClient.getZookeeperClient().getZooKeeper().getSessionId());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public CuratorFramework getCuratorFrameworkClient() {
