@@ -1,5 +1,6 @@
-package com.dshuplyakov;
+package com.dshuplyakov.recipe;
 
+import com.dshuplyakov.ZookeeperInit;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.cache.ChildData;
 import org.apache.curator.framework.recipes.cache.NodeCache;

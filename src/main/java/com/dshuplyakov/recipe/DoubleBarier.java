@@ -1,4 +1,4 @@
-package com.dshuplyakov.ddb;
+package com.dshuplyakov.recipe;
 
 import com.dshuplyakov.ZookeeperInit;
 import org.apache.curator.framework.CuratorFramework;
@@ -13,8 +13,8 @@ import java.util.concurrent.Callable;
  * @author Dmitry Shuplyakov
  */
 
-//java -cp zk-jar-with-dependencies.jar com.dshuplyakov.ddb.DDBarierApp 1
-public class DDBarierApp {
+//java -cp zk-jar-with-dependencies.jar com.dshuplyakov.recipe.DDBarierApp 1
+public class DoubleBarier {
 
     private static final int QTY = 5;
     private static final String PATH = "/examples/barrier";

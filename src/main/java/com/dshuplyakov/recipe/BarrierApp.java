@@ -1,5 +1,6 @@
-package com.dshuplyakov;
+package com.dshuplyakov.recipe;
 
+import com.dshuplyakov.ZookeeperInit;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.barriers.DistributedBarrier;
 import org.apache.curator.framework.recipes.nodes.GroupMember;
@@ -11,7 +12,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 
-//java -cp zk-jar-with-dependencies.jar com.dshuplyakov.BarrierApp 1
+//java -cp zk-jar-with-dependencies.jar com.dshuplyakov.recipe.BarrierApp 1
 public class BarrierApp {
 
     private static final int QTY = 5;
