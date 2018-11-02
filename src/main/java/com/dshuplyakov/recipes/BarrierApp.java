@@ -1,9 +1,8 @@
-package com.dshuplyakov.recipe;
+package com.dshuplyakov.recipes;
 
 import com.dshuplyakov.ZookeeperInit;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.barriers.DistributedBarrier;
-import org.apache.curator.framework.recipes.nodes.GroupMember;
 import org.apache.curator.utils.CloseableUtils;
 
 import java.util.concurrent.Callable;

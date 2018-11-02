@@ -88,7 +88,7 @@
                     <!-- MainClass in mainfest make a executable jar -->
                     <archive>
                         <manifest>
-                            <mainClass>com.dshuplyakov.recipe.GroupMemberApp</mainClass>
+                            <mainClass>com.dshuplyakov.recipes.GroupMember</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

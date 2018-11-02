@@ -1,10 +1,8 @@
-package com.dshuplyakov.recipe;
+package com.dshuplyakov.recipes;
 
 import com.dshuplyakov.ZookeeperInit;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.barriers.DistributedDoubleBarrier;
-
-import java.util.concurrent.Callable;
 
 /**
  * Date: 13.10.2018
@@ -13,7 +11,7 @@ import java.util.concurrent.Callable;
  * @author Dmitry Shuplyakov
  */
 
-//java -cp zk-jar-with-dependencies.jar com.dshuplyakov.recipe.DDBarierApp 1
+//java -cp zk-jar-with-dependencies.jar com.dshuplyakov.recipe.DoubleBarier 1
 public class DoubleBarier {
 
     private static final int QTY = 5;
