@@ -8,10 +8,7 @@ import org.apache.curator.framework.recipes.cache.NodeCacheListener;
 public class CachedNode {
 
     public static void main(String[] args) throws Exception {
-        ZookeeperInit zookeeperInit = new ZookeeperInit();
-        zookeeperInit.init();
-
-        CuratorFramework curatorFramework = zookeeperInit.getCuratorFrameworkClient();
+        CuratorFramework curatorFramework = ZookeeperInit.getCuratorFrameworkClient();
 
         final NodeCache nodeCache = new NodeCache(curatorFramework, "/cache");
         nodeCache.getListenable().addListener(new NodeCacheListener() {

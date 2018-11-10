@@ -18,12 +18,8 @@ public class DoubleBarier {
     private static final String PATH = "/examples/barrier";
 
     public static void main(String[] args) throws InterruptedException {
-
-        ZookeeperInit zookeeperInit = new ZookeeperInit();
-        zookeeperInit.init();
-
         String clientId = args[0];
-        CuratorFramework curatorFramework = zookeeperInit.getCuratorFrameworkClient();
+        CuratorFramework curatorFramework = ZookeeperInit.getCuratorFrameworkClient();
         final DistributedDoubleBarrier barrier = new DistributedDoubleBarrier(curatorFramework, PATH, QTY);
         try {
             Thread.sleep((long) (30000 * Math.random()));

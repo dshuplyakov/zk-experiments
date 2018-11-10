@@ -18,19 +18,17 @@ public class ZookeeperInit {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ZookeeperInit.class);
 
-    private CuratorFramework curatorFrameworkClient;
+    private static CuratorFramework curatorFrameworkClient;
 
-    public void init() {
-        //building client
+    public static void init() {
         curatorFrameworkClient = CuratorFrameworkFactory.builder()
-                .connectString("srv7-turzin:2181")
+                .connectString("localhost:2181")
                 .retryPolicy(new RetryNTimes(3, 1000))
                 .sessionTimeoutMs(20000)
                 .connectionTimeoutMs(1000)
                 .build();
         curatorFrameworkClient.start();
         //block thread until zk connection is established
-
 
         try {
             curatorFrameworkClient.getZookeeperClient().blockUntilConnectedOrTimedOut();
@@ -49,7 +47,10 @@ public class ZookeeperInit {
         }
     }
 
-    public CuratorFramework getCuratorFrameworkClient() {
+    public synchronized static CuratorFramework getCuratorFrameworkClient() {
+        if (curatorFrameworkClient == null) {
+            init();
+        }
         return curatorFrameworkClient;
     }
 }

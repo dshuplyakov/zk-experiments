@@ -18,10 +18,7 @@ public class BarrierApp {
     private static final String PATH = "/barrier";
 
     public static void main(String[] args) throws Exception {
-        ZookeeperInit zookeeperInit = new ZookeeperInit();
-        zookeeperInit.init();
-
-        CuratorFramework client = zookeeperInit.getCuratorFrameworkClient();
+        CuratorFramework client = ZookeeperInit.getCuratorFrameworkClient();
         try {
 
 
