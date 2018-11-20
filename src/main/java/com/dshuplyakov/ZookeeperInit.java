@@ -24,7 +24,7 @@ public class ZookeeperInit {
         curatorFrameworkClient = CuratorFrameworkFactory.builder()
                 .connectString("localhost:2181")
                 .retryPolicy(new RetryNTimes(3, 1000))
-                .sessionTimeoutMs(20000)
+                .sessionTimeoutMs(10000)
                 .connectionTimeoutMs(1000)
                 .build();
         curatorFrameworkClient.start();
